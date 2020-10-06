@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'jacoco-android'
+//apply plugin: 'jacoco-android'
+apply plugin: "com.hiya.jacoco-android"
+apply plugin: 'com.huawei.agconnect'
+apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
     compileSdkVersion versions.compileSdkVersion
@@ -8,8 +11,8 @@ android {
     defaultConfig {
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
-        versionCode = Integer.parseInt(VERSION_CODE)
-        versionName = VERSION_NAME
+        versionCode = 1
+        versionName = "1.0.0"
     }
 
     buildTypes {
@@ -20,15 +23,23 @@ android {
             testCoverageEnabled true
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
+    implementation project(':xmsadapter')
     implementation libraries.appCompat
-    implementation libraries.googlePlayServices
+    implementation libraries.gmsLocation
+    implementation libraries.hmsLocation
 
     testImplementation libraries.junit
     testImplementation libraries.assertJ
     testImplementation libraries.mockito
+
+
 }
 
-apply from: 'maven_push.gradle'
+

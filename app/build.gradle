@@ -1,11 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion versions.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.yayandroid.locationmanager.sample"
+        applicationId "com.megaache.xmslocationmanager.sample"
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
         versionCode 1
@@ -14,6 +16,7 @@ android {
 }
 
 dependencies {
+    implementation project(':xmsadapter')
     implementation project(':library')
     implementation libraries.appCompat
 
