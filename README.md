@@ -30,7 +30,7 @@ Add library dependency to your app level `build.gradle` file:
 
 ```groovy
 dependencies {
-     implementation 'com.github.megaacheyounes:XMSLocationManager:2.5.0'
+     implementation 'com.github.megaacheyounes:XMSLocationManager:2.5.1'
 }
 ```
 

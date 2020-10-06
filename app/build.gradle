@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.huawei.agconnect'
-apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
     compileSdkVersion versions.compileSdkVersion
@@ -13,6 +12,20 @@ android {
         versionCode 1
         versionName "1"
     }
+
+    buildTypes {
+        debug{
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
 }
 
 dependencies {

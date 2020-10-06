@@ -12,7 +12,7 @@ android {
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
         versionCode = 250
-        versionName = "2.5.0"
+        versionName = "2.5.1"
     }
 
     buildTypes {
