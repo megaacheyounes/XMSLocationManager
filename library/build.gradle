@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 //apply plugin: 'jacoco-android'
 apply plugin: "com.hiya.jacoco-android"
 apply plugin: 'com.huawei.agconnect'
-apply from: '../xmsadapter/scripts/productFlavor.gradle'
+
 
 android {
     compileSdkVersion versions.compileSdkVersion
